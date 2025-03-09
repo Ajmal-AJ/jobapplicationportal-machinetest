@@ -15,7 +15,7 @@
               <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Description</th>
+                <th class="long-text">Description</th>
                 <th>Location</th>
                 <th>Action</th>
               </tr>
@@ -28,7 +28,7 @@
                 <tr>
                   <td>{{$index+1}}</td>
                   <td>{{item.title}}</td>
-                  <td> <p class="job-description">
+                  <td class="long-text" title="{{item.description}}"> <p class="job-description mb-0">
                     {{item.description}}
                   </p>
 
