@@ -48,6 +48,7 @@ export class JobFormComponent  implements OnChanges {
             this.jobSaved.emit(updatedJob);
             this.jobService.showSnackBar('Job updated successfully!', 'Close');
             this.isLoading = false;
+            this.jobForm.reset();
           },
           error: () => {
             this.jobService.showSnackBar('Failed to update job!', 'Close', 'error-snackbar');
@@ -59,6 +60,7 @@ export class JobFormComponent  implements OnChanges {
           next: (newJob) => {
             this.jobSaved.emit(newJob);
             this.jobService.showSnackBar('Job added successfully!', 'Close');
+            this.jobForm.reset();
             this.isLoading = false;
           },
           error: () => {
