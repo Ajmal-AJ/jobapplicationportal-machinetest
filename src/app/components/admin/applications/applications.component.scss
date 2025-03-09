@@ -1,0 +1,51 @@
+
+.table-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.card-title {
+  font-size: 17px;
+}
+.table-ht {
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+.table-ht::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.table-ht::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(245, 244, 244);
+  border-radius: 10px;
+}
+
+.table-ht::-webkit-scrollbar-thumb {
+  background: rgb(202, 202, 202);
+  border-radius: 10px;
+}
+.table-ht::-webkit-scrollbar-thumb:hover {
+  background: #b9b9b9;
+}
+
+table{
+
+  thead {
+    position: sticky;
+    top: -2px;
+
+    tr, th {
+      background-color: #eee;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+  }
+  tbody {
+    tr,td {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+
+}

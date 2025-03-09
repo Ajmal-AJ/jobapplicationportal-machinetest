@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <header class="app-navbar">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-6 d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <h5 class="logo mb-0"> Admin Portal </h5>
+              <button class="btn d-lg-none d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+
+                <i class="bi bi-list"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 col-sm-6 col-md-6 col-6 d-flex align-items-center justify-content-end">
+            <ul class="float-end mb-0 d-flex gap-2 admin-right-controls align-items-center">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/"><i class="bi bi-globe-americas me-1"></i> <span class="d-lg-inline-block d-md-inline-block d-sm-none d-none"> View Site</span> </a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="authService.logout()"><i class="bi bi-power me-1"></i> <span class="d-lg-inline-block d-md-inline-block d-sm-none d-none">Sign Out</span>  </a>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+  </header>
+
+
+  <aside class="sidebar-wrapper d-lg-block d-md-none d-sm-none d-none">
+
+
+    <ul class="ps-0 side-bar">
+      <li class="menu-item"><a class="menu-link" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}"><i class="bi bi-grid-fill menu-icon me-2"></i>  Dashboard</a></li>
+      <li class="menu-item"><a class="menu-link" routerLink="/dashboard/applications" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}"> <i class="bi bi-person-lines-fill menu-icon  me-2"></i> Applications</a></li>
+
+    </ul>
+
+
+  </aside>
+
+
+
+<div class="offcanvas offcanvas-start sm-sidebar" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header pb-1">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="ps-0 side-bar">
+      <li class="menu-item"><a class="menu-link" data-bs-dismiss="offcanvas" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}"><i class="bi bi-grid-fill menu-icon me-2"></i>  Dashboard</a></li>
+      <li class="menu-item"><a class="menu-link" data-bs-dismiss="offcanvas" routerLink="/dashboard/applications" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}"> <i class="bi bi-person-lines-fill menu-icon  me-2"></i>Applications</a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+  <div class="container-body">
+    <router-outlet/>
+  </div>
+</div>

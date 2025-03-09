@@ -1,0 +1,239 @@
+@use "@angular/material" as mat;
+@include mat.core();
+$jobapplicationportal-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+:root {
+  @include mat.all-component-themes($jobapplicationportal-theme);
+}
+
+@import "../node_modules//bootstrap-icons/font/bootstrap-icons.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+body {
+  padding: 0;
+  margin: 0;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  overflow-x: hidden;
+  background-color: #f4f2ee;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+::placeholder{
+  font-size: 13px;
+}
+
+.banner-section {
+  background: url("../public/careers.jpg");
+  padding: 90px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: #1e1c1c99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media screen and (max-width: 767.99px) {
+    padding: 20px 10px;
+
+    h1 {
+      font-size: 17px;
+    }
+  }
+}
+li {
+  list-style: none;
+}
+.breadcrumb-bg{
+  background-color: #eee;
+}
+.btn_primary {
+  background: linear-gradient(320deg, #06200e, #748d82);
+  color: #fff;
+  padding: 7px 19px;
+  font-size: 13px;
+  border: none;
+  &:hover {
+    background: linear-gradient(320deg, #748d82, #06200e);
+    color: #fff;
+  }
+}
+.btn_secondary
+{
+  padding: 7px 19px;
+  color: #fff !important;
+  border: none;
+  font-size: 13px;
+  background: #db4b4b !important;
+  &:hover {
+    background:  #bbb !important;
+    color: #fff;
+  }
+}
+.error-msg {
+  font-size: 12px;
+  padding: 4px;
+}
+::ng-deep .mat-sort-header-arrow {
+  color: #fff !important
+}
+.mat-mdc-snack-bar-label {
+  color: #fff !important;
+}
+
+::ng-deep .mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  background-color: #47574f !important;
+}
+
+.spinner-border {
+  color: #fff ;
+}
+
+
+
+.shimmer-row {
+  display: flex;
+  width: 100%;
+}
+
+.shimmer-row  {
+  position: relative;
+  background: #f6f7f8;
+  border-radius: 4px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.shimmer-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 25%, rgba(230, 230, 230, 0.8) 50%, rgba(255, 255, 255, 0) 75%);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  50% {
+    background-position: 200px 0;
+  }
+  100% {
+    background-position: -200px 0;
+  }
+}
+
+.table-shimmer {
+  background: linear-gradient(100deg, #f6f7f8 25%, #edeef1 50%, #f6f7f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  height: 20px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+
+
+.shimmer-card {
+  width: 100%;
+  padding:15px;
+  border-radius: 8px;
+  background-color: #f6f7f8;
+  overflow: hidden;
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.shimmer-content {
+  flex: 1;
+}
+
+.shimmer-text {
+  height: 16px;
+  max-width: 100%;
+  width: 225px;
+  background: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #e0e0e0 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2s infinite ease-in-out;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.shimmer-text.small {
+  height: 22px;
+  width: 26%;
+}
+
+.shimmer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.shimmer-button {
+  height: 26px;
+  width: 100px;
+  background: linear-gradient(to right, #f6f7f8 0%, #e0e0e0 20%, #f6f7f8 40%, #e8e8ec 100%);
+  background-size: 800px 100%;
+ animation: shimmer 2s infinite ease-in-out;
+  border-radius: 50px;
+}
+
+.shimmer-image {
+  height: 200px;
+  width: 100%;
+  margin: auto;
+  background: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #e0e0e0 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 4s infinite ease-in-out;
+  border-radius: 8px;
+}
+
+

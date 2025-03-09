@@ -1,0 +1,41 @@
+<section class="loginpage-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <form class="card login-card mx-auto"[formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" formControlName="username" placeholder="Username" required >
+            @if (loginForm.controls['username'].touched && loginForm.controls['username'].errors?.['required']) {
+
+              <small class="text-danger error-msg" >Username is required</small>
+            }
+
+          </div>
+          <div class="mb-3 ">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password" required >
+            @if (loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']) {
+
+              <small class="text-danger error-msg" >Password is required</small>
+
+            }
+
+          </div>
+
+
+          <button type="submit" class="btn login-btn" [disabled]="loginForm.invalid">Sign in
+            @if (isLoading) {
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <span class="visually-hidden" role="status">Loading...</span>
+            }
+        </button>
+          @if (errorMessage) {
+            <div  class="text-danger error-msg text-center p-2">{{ errorMessage }}</div>
+
+          }
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

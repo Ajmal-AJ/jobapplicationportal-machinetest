@@ -1,0 +1,51 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <form [formGroup]="applyForm" (ngSubmit)="submitApplication()">
+
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply Job</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email </label>
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter your email">
+            @if (applyForm.controls['email'].invalid && applyForm.controls['email'].touched) {
+
+              <small  class="text-danger error-msg">
+                Valid email is required.
+              </small>
+            }
+
+          </div>
+          <div class="mb-3">
+            <label for="applicantName" class="form-label">ApplicantName</label>
+            <input type="text" class="form-control" formControlName="applicantName" id="applicantName" placeholder="Enter Your Name">
+            @if (applyForm.controls['applicantName'].invalid && applyForm.controls['applicantName'].touched) {
+              <small  class="text-danger error-msg">Name is required.</small>
+
+            }
+          </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_secondary" data-bs-dismiss="modal">Close</button>
+           <button type="submit" class="btn btn_primary" [disabled]="applyForm.invalid" data-bs-dismiss="modal">Apply
+            @if (isLoading) {
+
+              <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span class="visually-hidden" role="status">Loading...</span>
+            }
+           </button>
+      </div>
+    </form>
+
+
+    </div>
+  </div>
+</div>

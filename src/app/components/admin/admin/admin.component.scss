@@ -1,0 +1,90 @@
+.table-ht {
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+.table-ht::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.table-ht::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(245, 244, 244);
+  border-radius: 10px;
+}
+
+.table-ht::-webkit-scrollbar-thumb {
+  background: rgb(202, 202, 202);
+  border-radius: 10px;
+}
+
+.table-ht::-webkit-scrollbar-thumb:hover {
+  background: #b9b9b9;
+}
+
+table{
+
+  thead {
+    position: sticky;
+    top: -2px;
+
+    tr, th {
+      background-color: #eee;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+  }
+  tbody {
+    tr,td {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    i {
+      transform: translateY(-2px);
+
+
+    }
+  }
+  &.deletbtn {
+    background-color: rgb(214, 60, 60);
+    &:hover{
+      background-color: #ff1919;
+    }
+   i {
+
+     color: #fff;
+   }
+  }
+}
+.job-description{
+  word-break: break-all;
+    max-width: 800px;
+    width: 100%;
+    /* overflow: auto; */
+    word-wrap: break-word;
+    line-break: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+
+
+

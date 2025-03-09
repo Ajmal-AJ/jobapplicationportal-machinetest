@@ -1,0 +1,41 @@
+<header>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">JOB APPLICATION PORTAL</a>
+
+      <button class="btn canvas-btn d-lg-none d-md-block d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <i class="bi bi-list"></i></button>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-items"><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}" class="nav-link"><i class="bi bi-house-door-fill"></i> Home</a></li>
+          <li class="nav-items"><a [routerLink]="['/my-applications']" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}" class="nav-link"><i class="bi bi-briefcase"></i> Applied Job</a></li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+   <ul class="ps-0">
+    <li class="nav-items mb-3"><a [routerLink]="['/']" routerLinkActive="active" data-bs-dismiss="offcanvas" [routerLinkActiveOptions]="{exact :true}" class="nav-link"><i class="bi bi-house-door-fill me-2"></i> Home</a></li>
+    <li class="nav-items mb-3"><a [routerLink]="['/my-applications']" routerLinkActive="active" data-bs-dismiss="offcanvas" [routerLinkActiveOptions]="{exact :true}" class="nav-link"><i class="bi bi-briefcase me-2"></i> Applied Job</a></li>
+
+
+   </ul>
+  </div>
+</div>
+
+
+<main>
+  <router-outlet></router-outlet>
+</main>

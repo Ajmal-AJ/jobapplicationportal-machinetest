@@ -1,0 +1,38 @@
+.form-control {
+  box-shadow: none;
+  font-size: 14px;
+  &:focus {
+    box-shadow: none;
+
+    outline: none;
+  }
+  &:hover {
+    box-shadow: none;
+
+    outline: none;
+  }
+}
+.add_modal-body {
+  max-height: 505px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+::placeholder {
+  font-size: 12px;
+}
+.form-label {
+  font-size: 14px;
+}
+.modal-title {
+  font-size: 16px;
+
+}
+::ng-deep .mat-sort-header-arrow {
+  color: #fff !important
+}
+
+
+::ng-deep .mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  background-color:#797575 !important;
+}

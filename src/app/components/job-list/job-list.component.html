@@ -1,0 +1,89 @@
+@let cardshimmer = [1,2,3,4,5,6];
+<section class="banner-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+          <h1 class="headline text-uppercase">job Application Portal</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-3">
+
+<div class="container">
+  <div class="row">
+    @defer (when !isLoading) {
+
+    @for (item of jobList; track $index) {
+
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-2 ">
+      <div class="card job-card mb-3 border-0"  [routerLink]="['/job-detail', item.id]" >
+        <div class="row g-0">
+
+          <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+            <div class="card-body">
+              <h5 class="card-title"> <a  [routerLink]="['/job-detail', item.id]" >{{item.title}}</a> </h5>
+              <p class="card-text"><i class="bi bi-geo-alt-fill"></i> {{item.location}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-4 d-flex justify-content-center align-items-center">
+            <div class="">
+              <button class="btn view-detail-btn" [routerLink]="['/job-detail', item.id]">View Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  }
+  
+  @placeholder {
+    @for (item of cardshimmer; track $index) {
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-2 ">
+      <div class="shimmer-card">
+        <div class="shimmer-content">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="shimmer-text"></div>
+              <div class="shimmer-text  "></div>
+
+            </div>
+            <div>
+              <div class="shimmer-button"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      </div>
+  }}
+  @loading() {
+    @for (item of cardshimmer; track $index) {
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-2 ">
+      <div class="shimmer-card">
+        <div class="shimmer-content">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="shimmer-text"></div>
+              <div class="shimmer-text  "></div>
+
+            </div>
+            <div>
+              <div class="shimmer-button"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      </div>
+    }
+  }
+
+
+  </div>
+</div>
+</section>

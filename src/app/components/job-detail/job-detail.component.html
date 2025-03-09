@@ -1,0 +1,47 @@
+<section class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mt-3 text-center">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/']" routerLinkActive="router-link-active">Job</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{job.title}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12  my-3">
+        <div class="card job-detail-card">
+
+          <div class="card-body">
+            <h3 class="card-title">{{job.title}}</h3>
+            <p class="card-text"><i class="bi bi-geo-alt-fill"></i>{{job.location}}</p>
+
+            <div class="content_box">
+              <p class="para h6">Description</p>
+
+              <p class="">{{job.description}} </p>
+            </div>
+
+
+            <div class="text-center">
+              <button class="btn btn-success  mx-auto" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="disableApplyButton">{{ disableApplyButton ? 'Applied' : 'Apply Now' }} </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<app-apply-job [jobId]="job.id"></app-apply-job>

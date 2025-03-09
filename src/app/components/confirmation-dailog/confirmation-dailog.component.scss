@@ -1,0 +1,19 @@
+.confirmation-text {
+  font-size: 13px;
+  font-weight: 500;
+
+}
+.confirm-box {
+  background-color: #fbfbfb;
+  color: #252525;
+  border-radius: 10px;
+  .title{
+      font-weight: 700;
+      color: #d93b3b;
+      font-size: 18px;
+  }
+  button {
+    font-size: 14px;
+  }
+}
+

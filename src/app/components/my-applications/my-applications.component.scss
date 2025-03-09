@@ -1,0 +1,108 @@
+
+.view-detail-btn {
+  padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #3d8653;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+  &:hover {
+    background-color: #325c9f;
+    color: #fff;
+    padding: 5px 12px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+    padding: 5px 12px;
+    border: none;
+    box-shadow: none;
+  }
+}
+.job-card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-transition:  box-shadow .5s ease-out;
+  transition:  box-shadow .6s ease-out;
+  &:hover{
+    transition:  box-shadow .6s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid #cccccc;
+    background-color: #f9f9ff;
+    -webkit-transition:  box-shadow .5s ease-in;
+  }
+  .card-text {
+    color: #aaa;
+    font-size: 13px;
+    i{
+      color: #aaa;
+
+    }
+  }
+  .card-title{
+    font-size: 15px;
+  }
+  .view-detail-btn{
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+.user-popup{
+  background-color: #252222d6;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: 6;
+}
+.user_mail-card {
+  max-width: 443px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  animation: pop-up 0.5s ease-out forwards;
+  padding: 33px 6px 10px;
+  @media screen and (max-width:992px) {
+    width: 95%;
+    margin: auto;
+  }
+  .form-control {
+    font-size: 14px;
+
+    &:focus {
+      box-shadow: none;
+
+    }
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+  .form-label {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.error-msg {
+  font-size: 12px;
+    padding: 7px
+}
+@keyframes pop-up {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}

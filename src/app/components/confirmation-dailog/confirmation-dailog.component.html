@@ -1,0 +1,13 @@
+<div class="p-lg-4 p-2 confirm-box">
+  <div mat-dialog-content>
+    <h4 mat-dialog-title class="text-center title">{{ data.title }}</h4>
+    <p class="confirmation-text text-center">
+      {{ data.message }}
+
+    </p>
+  </div>
+  <div mat-dialog-actions class="d-flex justify-content-center gap-3 pt-2">
+    <button class="btn btn_secondary" mat-button (click)="onNoClick()">No</button>
+    <button class="btn btn_primary" mat-button (click)="onYesClick()">Yes</button>
+  </div>
+</div>

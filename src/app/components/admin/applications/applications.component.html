@@ -1,0 +1,97 @@
+@let tableshimmer = [1,2,3,4,5];
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="card px-1 table-card border-0">
+        <div class="d-flex justify-content-between align-items-center px-3">
+          <h5 class="card-title  mb-0 py-3 ">Applications</h5>
+
+        </div>
+        <div class="table-responsive table-ht">
+          <table class="table table-bordered mb-1">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Applied Date</th>
+                <th>Applicant Name</th>
+                <th>Applied Job</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              @defer (when !isLoading) {
+              @if (applications.length > 0) {
+              @for (item of applications; track $index) {
+
+
+              <tr>
+                <td>{{$index+1}}</td>
+                <td>{{ item.applied_date | dateFormat }}</td>
+                <td class="text-capitalize">{{item.applicant_name}}</td>
+                <td>{{item.job_title}}</td>
+                <td>{{item.email}}</td>
+              </tr>
+             }
+            }
+            @else {
+              <tr class="py-3">
+                <td colspan="5" class="py-4">
+                  <p class="text-danger text-center"> No data to display</p>
+                </td>
+              </tr>
+            }
+          }
+          @placeholder {
+            @for (item of tableshimmer; track $index) {
+              <tr>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+
+              </tr>
+              }
+          }
+
+          @loading {
+            @for (item of tableshimmer; track $index) {
+              <tr>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+                <td>
+                  <div class="table-shimmer"></div>
+                </td>
+
+              </tr>
+              }
+          }
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
